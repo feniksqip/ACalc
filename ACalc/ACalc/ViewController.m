@@ -39,19 +39,18 @@ NSString *tempStr;
     // Dispose of any resources that can be recreated.
 }
 
-
 -(NSString*)convertFloatToString: (float) digit {
     NSString * newStr = [NSString new];
     newStr = [NSNumber numberWithFloat:digit].stringValue;
     if (![self.resultView.text isEqualToString:@"0"] && (selectedFunc == 0) ) {
         return [NSString stringWithFormat:@"%@%@", self.resultView.text, newStr];
-    } else  {
+    } else if ( ![self.resultView.text isEqualToString:@"0"] && (selectedFunc > 0) )  {
+        return [NSString stringWithFormat:@"%@%@", self.resultView.text, newStr];
+    } else {
         return [NSString stringWithFormat:@"%@", newStr];
     }
 
 }
-
-
 
 - (IBAction)btnNumber:(id)sender {
     
@@ -83,21 +82,34 @@ NSString *tempStr;
 
 - (IBAction)btnResult:(id)sender {
     if (selectedFunc != 0) {
+        
+        NSString * newStr = [NSString new];
+        
         switch ( selectedFunc ) {
             case 201:
-                self.resultView.text =  [self convertFloatToString: addFunc(tempX, [self.resultView.text floatValue])];
+//                self.resultView.text =  [self convertFloatToString: addFunc(tempX, [self.resultView.text floatValue])];
+                newStr = [NSNumber numberWithFloat:addFunc(tempX, [self.resultView.text floatValue])].stringValue;
+                self.resultView.text = [NSString stringWithFormat:@"%@", newStr ];
                 [self clearData];
                 break;
             case 202:
-                self.resultView.text =  [self convertFloatToString: deductFunc(tempX, [self.resultView.text floatValue])];
+//                self.resultView.text =  [self convertFloatToString: deductFunc(tempX, [self.resultView.text floatValue])];
+                newStr = [NSNumber numberWithFloat:deductFunc(tempX, [self.resultView.text floatValue])].stringValue;
+                self.resultView.text = [NSString stringWithFormat:@"%@", newStr ];
                 [self clearData];
                 break;
             case 203:
-                self.resultView.text =  [self convertFloatToString: multiplyFunc(tempX, [self.resultView.text floatValue])];
+               // selectedFunc = 0;
+               // self.resultView.text =  [self convertFloatToString: multiplyFunc(tempX, [self.resultView.text floatValue])];
+                
+                newStr = [NSNumber numberWithFloat:multiplyFunc(tempX, [self.resultView.text floatValue])].stringValue;
+                self.resultView.text = [NSString stringWithFormat:@"%@", newStr ];
                 [self clearData];
                 break;
             case 204:
-                self.resultView.text =  [self convertFloatToString: divideFunc(tempX, [self.resultView.text floatValue])];
+//                self.resultView.text =  [self convertFloatToString: divideFunc(tempX, [self.resultView.text floatValue])];
+                newStr = [NSNumber numberWithFloat:divideFunc(tempX, [self.resultView.text floatValue])].stringValue;
+                self.resultView.text = [NSString stringWithFormat:@"%@", newStr ];
                 [self clearData];
                 break;
                 

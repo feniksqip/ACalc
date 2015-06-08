@@ -84,13 +84,13 @@
 		84DD9D001B25FB8700C13E6A /* ACalc */ = {
 			isa = PBXGroup;
 			children = (
-				84DD9D2D1B25FC6F00C13E6A /* ViewController.h */,
-				84DD9D2E1B25FC6F00C13E6A /* ViewController.m */,
-				84DD9D2B1B25FC4B00C13E6A /* Main.storyboard */,
 				84DD9D271B25FBD800C13E6A /* Model */,
 				84DD9D051B25FB8700C13E6A /* AppDelegate.h */,
 				84DD9D061B25FB8700C13E6A /* AppDelegate.m */,
+				84DD9D2D1B25FC6F00C13E6A /* ViewController.h */,
+				84DD9D2E1B25FC6F00C13E6A /* ViewController.m */,
 				84DD9D0E1B25FB8700C13E6A /* Images.xcassets */,
+				84DD9D2B1B25FC4B00C13E6A /* Main.storyboard */,
 				84DD9D101B25FB8700C13E6A /* LaunchScreen.xib */,
 				84DD9D011B25FB8700C13E6A /* Supporting Files */,
 			);
